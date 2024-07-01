@@ -54,7 +54,7 @@ services:
     ports:
       - '8888:80'
     environment:
-      - REACT_APP_GRAPHQL_URI=http://app:3000/graphql
+      - REACT_APP_GRAPHQL_URI=${REACT_APP_GRAPHQL_URI}
     networks:
       - backend
 
