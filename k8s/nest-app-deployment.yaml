@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nest-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nest-app
+  template:
+    metadata:
+      labels:
+        app: nest-app
+    spec:
+      containers:
+        - name: nest-app
+          image: nest-app:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: MONGO_URL
+              value: mongodb://root:example@mongo:27017
+            - name: REDIS_HOST
+              value: redis
+          volumeMounts:
+            - name: app-storage
+              mountPath: /app
+      volumes:
+        - name: app-storage
+          emptyDir: {}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nest-app
+spec:
+  ports:
+    - port: 3000
+  selector:
+    app: nest-app

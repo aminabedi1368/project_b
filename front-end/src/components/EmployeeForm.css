@@ -1,0 +1,17 @@
+.employee-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.employee-form input {
+    padding: 8px;
+    font-size: 16px;
+}
+
+.employee-form button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}

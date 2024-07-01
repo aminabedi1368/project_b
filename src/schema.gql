@@ -1,0 +1,55 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""Employee entity representing an employee in the company"""
+type Employee {
+  """The unique identifier of the employee"""
+  id: ID!
+
+  """The name of the employee"""
+  name: String!
+
+  """The job title of the employee"""
+  jobTitle: String!
+
+  """The department of the employee"""
+  department: String!
+
+  """The email of the employee"""
+  email: String!
+}
+
+type Query {
+  """Retrieve all employees"""
+  employees: [Employee!]!
+
+  """Retrieve an employee by their ID"""
+  employee(id: String!): Employee!
+}
+
+type Mutation {
+  """Create a new employee"""
+  createEmployee(createEmployeeInput: CreateEmployeeInput!): Employee!
+
+  """Update an existing employee"""
+  updateEmployee(updateEmployeeInput: UpdateEmployeeInput!): Employee!
+
+  """Remove an employee by their ID"""
+  removeEmployee(id: String!): Employee!
+}
+
+input CreateEmployeeInput {
+  name: String!
+  jobTitle: String!
+  department: String!
+  email: String!
+}
+
+input UpdateEmployeeInput {
+  id: ID!
+  name: String
+  jobTitle: String
+  department: String
+  email: String
+}

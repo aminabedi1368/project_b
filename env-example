@@ -1,0 +1,13 @@
+# .env
+MONGODB_URI=mongodb://root:example@mongo:27017/nest?authSource=admin
+
+REDIS_HOST=redis
+REDIS_PORT=6379
+REDIS_MAX_RETRIES=20
+
+EMAIL_COMPANY=aminabedi1368@gmail.com
+EMAIL_USER=
+EMAIL_PASS=
+
+NETWORKS_DRIVER=bridge
+NODE_ENV=production
