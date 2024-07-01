@@ -14,3 +14,9 @@ FRONTEND_URL=http://95.216.43.126:8888
 
 NETWORKS_DRIVER=bridge
 NODE_ENV=production
+
+https://github.com/aminabedi1368/project_b
+
+http://95.216.43.126:8888/
+
+http://95.216.43.126:3000/graphql

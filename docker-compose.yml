@@ -31,6 +31,7 @@ services:
       - EMAIL_COMPANY=${EMAIL_COMPANY}
       - EMAIL_USER=${EMAIL_USER}
       - EMAIL_PASS=${EMAIL_PASS}
+      - DSN_SENTRY=${DSN_SENTRY}
     depends_on:
       - mongo
       - redis
