@@ -22,7 +22,13 @@ Sentry.init({
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.enableCors(); // Enable CORS
+  const allowedOrigin = process.env.FRONTEND_URL || 'http://95.216.43.126:8888';
+  // Enable CORS
+  app.enableCors({
+    origin: allowedOrigin,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    credentials: true,
+  });
   const { httpAdapter } = app.get(HttpAdapterHost);
   Sentry.setupNestErrorHandler(app, new BaseExceptionFilter(httpAdapter));
   // Use validation pipe globally
